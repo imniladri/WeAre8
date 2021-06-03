@@ -1,0 +1,266 @@
+/* === ==== === ==== === ==== === ==== General ==== === ==== === ==== === ==== === */
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: 'Ubuntu', sans-serif;
+	background: #1E2326 url(../img/pattern-bg-black.jpg);
+	/*background: #222831;*/
+}
+
+/* === ==== === ==== === ==== === ==== Settings ==== === ==== === ==== === ==== === */
+
+::-webkit-scrollbar {
+	width: 8px;
+	height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 5px 0 0 5px;
+	background-image: linear-gradient(315deg, #045de9 0%, #09c6f9 74%);
+}
+
+::selection {
+	color: #FBF9FA;
+	background: #3290F7;
+}
+
+.no-select, img {
+	-webkit-user-select: none !important;
+	-moz-user-select: none !important;
+	-ms-user-select: none !important;
+	user-select: none !important;
+}
+
+/* === ==== === ==== === ==== === ==== Preloader ==== === ==== === ==== === ==== === */
+
+#preloader {
+	position: fixed;
+	top: 0; left: 0;
+	width: 100%;
+	height: 100vh;
+	background: #1B1B2D;
+	z-index: 9999;
+	transition: all 0.4s ease;
+}
+
+/* The loader container */
+
+img.loader {
+	width: 50%;
+	position: absolute;
+	top: 50%; left: 50%;
+	transform: translate(-50%,-50%);
+	transition: all 0.5s ease;
+}
+
+@media (max-width: 992px) {img.loader { width: 60% }}
+@media (max-width: 768px) {img.loader { width: 80% }}
+@media (max-width: 432px) {img.loader { width: 100%}}
+
+.pace {
+	position: fixed;
+	top: 70%; left: 50%;
+	transform: translate(-50%,-50%);
+	width: 500px;
+	height: 12px;
+	background: #272737;
+	border-radius: 50px;
+	z-index: 10000;
+	overflow: hidden;
+	transition: all 0.4s ease;
+}
+
+@media (max-width: 768px) {.pace { height: 10px }}
+@media (max-width: 520px) {.pace { width: 300px }}
+@media (max-width: 368px) {.pace { width: 240px }}
+
+.pace .pace-progress {
+	position: absolute;
+	top: 0; right: 100%;
+	width: 100%;
+	height: 100%;
+	background: #FDDB3A;
+	border-radius: 50px;
+	transition: all 0.4s ease;
+}
+
+/*.pace.pace-inactive {
+	display: none;
+}*/
+
+.pace .pace-progress:after {
+	content: attr(data-progress-text);
+	margin: 20px auto;
+	position: absolute;
+	width: 100%;
+	font-size: 30px;
+	font-weight: 600;
+	font-family: sans-serif;
+	color: #EDF2F6;
+	text-align: center;
+	transition: all 0.4s ease;
+}
+
+/* === ==== === ==== === ==== === ==== Header ==== === ==== === ==== === ==== === */
+
+header nav.navbar {
+	background: #1E2326 url(../img/pattern-bg-black.jpg);
+	padding: 10px 20px;
+	border-bottom: 3px solid #FBF9FA;
+	box-shadow: 0 12px 10px rgba(0,117,246,0.4) !important;
+}
+
+@media (max-width: 748px) {
+	header nav.navbar {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+}
+
+header nav.navbar .navbar-brand {
+	padding: 8px 28px;
+}
+
+@media (max-width: 748px) {
+	header nav.navbar .navbar-brand {margin: 10px auto 20px;}
+}
+
+@media (max-width: 548px) {
+	header nav.navbar .navbar-brand {margin: 10px auto 5px;}
+}
+
+@media (max-width: 548px) {
+	header nav.navbar .navbar-links {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+}
+
+header nav.navbar .navbar-links .btn-navbar {
+	margin: 0 10px;
+	padding: 6px 22px;
+	position: relative;
+	color: #FBF9FA;
+	background: #FD0054;
+	border-radius: 10px;
+	transition: all 0.4s ease;
+}
+
+@media (max-width: 498px) {
+	header nav.navbar .navbar-links .btn-navbar {
+		margin: 10px;
+	}
+}
+
+@media (max-width: 350px) {
+	header nav.navbar .navbar-links .btn-navbar {
+		margin: 10px auto;
+		background: transparent;
+		border: 3px solid #FD0054;
+	}
+}
+
+header nav.navbar .navbar-links .btn-navbar span {
+	font-size: 20px;
+	font-weight: 800;
+	letter-spacing: 0.5px;
+	transition: all 0.4s ease;
+	opacity: 1;
+	visibility: visible;
+}
+header nav.navbar .navbar-links .btn-navbar img {
+	width: 24px; height: 24px;
+	position: absolute;
+	top: 50%; left: 50%;
+	transform: translate(-50%,-50%) scale(0);
+	transition: all 0.4s ease;
+}
+
+@media (max-width: 498px) {
+	header nav.navbar .navbar-links .btn-navbar {padding: 6px 18px;}
+	header nav.navbar .navbar-links .btn-navbar span {font-size: 18px; font-weight: 600;}
+	header nav.navbar .navbar-links .btn-navbar img {width: 20px; height: 20px;}
+}
+
+header nav.navbar .navbar-links .btn-navbar:hover span {
+	opacity: 0;
+	visibility: hidden;
+}
+header nav.navbar .navbar-links .btn-navbar:hover img {
+	transform: translate(-50%,-50%) scale(1);
+}
+
+@media (min-width: 992px) {
+	.hamburger {
+		display: none;
+	}
+}
+@media (max-width: 324px) {
+	.hamburger-box {
+	 	width: 20px;
+	  	height: 14px;
+	  	margin-right: 10px;
+	}
+}
+
+/* === ==== === ==== === ==== === ==== Gallery Main ==== === ==== === ==== === ==== === */
+
+.container-fluid h1.head {
+	margin: 200px 0 0 0;
+	color: #fff;
+}
+
+.head .letter {
+  display: inline-block;
+}
+
+@media (max-width: 560px) {
+	.head {font-size: 2rem;}
+}
+@media (max-width: 455px) {
+	.head {font-size: 1.5rem;}
+}
+@media (max-width: 350px) {
+	.head {font-size: 1.3rem;}
+}
+
+.img-back {
+	position: relative;
+	background: #ebecf1;
+	border-radius: 10px;
+	transition: all 0.6s ease;
+}
+.img-gallery {
+	border: 8px solid #ebecf1;
+	border-radius: 10px;
+	transition: all 0.6s ease;
+}
+.img-layer {
+	position: absolute;
+	top: 50%; left: 50%;
+	transform: translate(-50%,-50%) scale(2);
+	opacity: 0;
+	transition: all 0.6s ease;
+}
+
+.img-back:hover {
+	background: rgba(0,0,0,0.05);
+	transform: scale(0.95);
+}
+.img-back:hover .img-gallery {
+	border: 8px solid #1E2326;
+	opacity: 0.3;
+	filter: grayscale(100%) blur(3px);
+}
+.img-back:hover .img-layer {
+	opacity: 1;
+	transform: translate(-50%,-50%) scale(1);
+}
+
+/* === ==== === ==== === ==== === ==== End Styles ==== === ==== === ==== === ==== === */

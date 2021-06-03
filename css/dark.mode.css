@@ -1,0 +1,151 @@
+/* Theme Mode Button */
+
+div.theme_modes {
+	margin: 5px;
+	position: fixed;
+	left: 60px;
+	bottom: 60px;
+}
+
+div.theme_modes i {
+	padding: 15px;
+	position: absolute;
+	top: 50%; left: 50%;
+	transform: translate(-50%,-50%);
+	font-size: 28px;
+	color: #3B3B42;
+	background: #EDEEF7;
+	border-radius: 50%;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+	div.theme_modes {left: 40px; bottom: 40px;}
+	div.theme_modes i {padding: 12px; font-size: 24px;}
+}
+@media (max-width: 500px) {
+	div.theme_modes {display: none;}
+}
+
+div.theme_modes i.dark 			{color: #FAFAFA; background: #272343;}
+div.theme_modes i.darker 		{opacity: 1; transform: translate(-50%,-50%) rotate(0deg);}
+div.theme_modes i.lighter		{opacity: 0; transform: translate(-50%,-50%) rotate(0deg);}
+div.theme_modes i.darker.dark 	{opacity: 0; transform: translate(-50%,-50%) rotate(360deg);}
+div.theme_modes i.lighter.dark 	{opacity: 1; transform: translate(-50%,-50%) rotate(360deg);}
+
+
+/* Dark Mode */
+
+div.dark_mode {
+	position: absolute;
+	top: 0; right: 0;
+	width: 100%;
+	height: 100%;
+	background: #1F1F37;
+	border-radius: 60px;
+	clip-path: circle(0% at 50% 50%);
+	transition: clip-path 0.6s ease;
+}
+
+div.dark_mode.dark {
+	clip-path: circle(100% at 50% 50%);
+}
+
+
+/* HTML & Body Dark Mode */
+
+body.dark {
+	background: #1B1B2F url(../img/pattern1.png);
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+	background: var(--white-color);
+}
+
+
+/* Tooltip Dark Mode */
+
+body.dark [data-tooltip]:after {
+	background: var(--red-color);
+}
+
+
+/* Header Nav Dark Mode */
+
+body.dark header nav.navbar {
+	background: #1B1B2F url(../img/pattern-bg-dark.png);
+	box-shadow: 0 10px 16px rgba(255,255,255,0.2) !important;
+	transition: all 0.3s ease;
+}
+
+/* Audio Dark Mode */
+
+body.dark div.audio img#off {
+	filter: invert(1);
+}
+
+
+/* Details H1 Dark Mode */
+
+body.dark section .container-details h1 {
+	color: rgba(241,246,249,0.9);
+}
+
+body.dark section .container-details h1:after {
+	background: #0085ff;
+}
+
+/* Details H3 Dark Mode */
+
+body.dark section .container-details h3 {
+	color: rgba(251,246,240,0.9);
+}
+
+
+/* Profile Div Dark Mode */
+
+body.dark section .container-details .profile {
+	background: #1F1F37;
+}
+
+
+/* Profile Text Div Dark Mode */
+
+body.dark section .container-details .profile .profile-text img {
+	background: #312c51;
+}
+
+body.dark section .container-details .profile .profile-text h2 {
+	color: #fafafa;
+}
+
+body.dark section .container-details .profile .profile-text p {
+	color: #fbf4f9;
+}
+
+
+/* Profile Link Div Dark Mode */
+
+body.dark section .container-details .profile .profile-link a {
+	background: #1F1F37;
+	box-shadow: inset 4px 4px 4px #161627,
+				inset -4px -4px 4px #282847,
+				4px 4px 4px #161627,
+				-4px -4px 4px #282847;
+}
+
+body.dark section .container-details .profile .profile-link a img {
+	filter: invert(1);
+}
+
+
+/* Footer Dark Mode */
+
+body.dark footer.footer-banner p.footer-text {
+	color: rgba(248,241,241,0.9);
+}
+
+body.dark footer.footer-banner p.footer-text span {
+	-webkit-text-stroke: 1px rgba(248,241,241,0.9);
+}
